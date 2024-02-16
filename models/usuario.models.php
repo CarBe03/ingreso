@@ -9,7 +9,7 @@ class Usuarios
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT Usuarios.idUsuarios, Usuarios.Nombres, Usuarios.Contrasenia, Usuarios.Apellidos, Usuarios.Correo, Roles.Rol, Roles.idRoles from Usuarios INNER JOIN Usuarios_Roles on Usuarios.idUsuarios = Usuarios_Roles.Usuarios_idUsuarios INNER JOIN Roles ON Usuarios_Roles.Roles_idRoles = Roles.idRoles";
+        $cadena = "SELECT Usuarios.idUsuarios, Usuarios.Nombres, Usuarios.Contrasenia, Usuarios.Apellidos, Usuarios.Correo, Roles.Rol, Roles.idRoles, Sucursales.Nombre from Usuarios INNER JOIN Usuarios_Roles on Usuarios.idUsuarios = Usuarios_Roles.Usuarios_idUsuarios INNER JOIN Roles ON Usuarios_Roles.Roles_idRoles = Roles.idRoles INNER JOIN Sucursales on Usuarios.SucursalId = Sucursales.SucursalId";
         $datos = mysqli_query($con, $cadena);
         return $datos;
         $con->close();
@@ -25,11 +25,12 @@ class Usuarios
         $con->close();
     }
     /*TODO: Procedimiento para insertar */
-    public function Insertar($Nombres, $Apellidos, $Correo, $Contrasenia, $idRoles)
+    public function Insertar($Nombres, $Apellidos, $Correo, $Contrasenia, $SucursalId, $idRoles)
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "INSERT into Usuarios(Nombres,Apellidos,Correo,Contrasenia) values ( '$Nombres', '$Apellidos', '$Correo', '$Contrasenia')";
+        $cadena = "INSERT into Usuarios(Nombres,Apellidos,Correo,Contrasenia, SucursalId) values ( '$Nombres', '$Apellidos', '$Correo', '$Contrasenia', $SucursalId)";
+
         if (mysqli_query($con, $cadena)) {
             $UsRoles = new Usuarios_Roles();
 
@@ -69,7 +70,7 @@ class Usuarios
         $con->close();
     }
 
-    public function login($Correo, $Contrasenia)
+    public function login($Correo)
     {
         try {
             $con = new ClaseConectar();
