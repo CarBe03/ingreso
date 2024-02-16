@@ -63,8 +63,4 @@ class Rol
         }
         $con->close();
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> eeb46a8eb29d0ab4a736e728e9723cd8cb4f4ae5

@@ -1,24 +1,26 @@
-<?php require_once('../html/head2.php')  ?>
+<?php require_once('../html/head3.php')  ?>
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <button type="button" class="btn btn-outline-secondary" onclick="sucursales(); roles()" data-bs-toggle="modal" data-bs-target="#ModalUsuarios">Nuevo Usuario</button>
+    <button type="button" class="btn btn-outline-secondary" onclick="sucursales(); roles()" data-bs-toggle="modal" data-bs-target="#ModalSucursal">Nueva Sucursal</button>
 
 
-    <h5 class="card-header">Lista de Usuarios</h5>
+    <h5 class="card-header">Lista de Sucursales</h5>
     <div class="table-responsive text-nowrap">
         <table class="table">
             <thead>
                 <tr>
-                    <th>#</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Sede</th>
-                    <th>Rol</th>
-                    <th>Acciones</th>
+                    <th>#Sucursalid</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Correo</th>
+                    <th>Parroquia</th>
+                    <th>Canton</th>
+                    <th>Provincia</th>
                 </tr>
             </thead>
-            <tbody class="table-border-bottom-0" id="ListaUsuarios">
+            <tbody class="table-border-bottom-0" id="ListaSucursales">
 
             </tbody>
         </table>
@@ -28,7 +30,7 @@
 
 <!-- Modal Usuarios-->
 
-<div class="modal" tabindex="-1" id="ModalUsuarios">
+<div class="modal" tabindex="-1" id="ModalSucursal">
     <div class="modal-dialog modal-dialog-centered modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -36,34 +38,32 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <form id="form_usuarios" method="post">
+            <form id="form_sucursal" method="post">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="Nombres">Nombres</label>
-                        <input type="text" name="Nombres" id="Nombres" class="form-control" placeholder="Ingrese sus nombres" require>
+                        <label for="Nombres">Nombre</label>
+                        <input type="text" name="Nombre" id="Nombre" class="form-control" placeholder="Ingrese el Nombre" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Apelldios</label>
-                        <input type="text" name="Apellidos" id="Apellidos" class="form-control" placeholder="Ingrese sus apellidos" require>
+                        <label for="Nombres">Direccion</label>
+                        <input type="text" name="Direccion" id="Direccion" class="form-control" placeholder="Ingrese la Direccion" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Sede</label>
-                        <select id="SucursalId" name="SucursalId" class="form-control">
-                        </select>
+                        <label for="Nombres">Telefono</label>
+                        <input type="number" name="Telefono" id="Telefono" class="form-control" placeholder="Ingrese el Telefono de la sucursal" required>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Rol</label>
-                        <select id="RolId" name="RolId" class="form-control">
-                        </select>
+                        <label for="Nombres">Parroquia</label>
+                        <input type="text" name="Parroquia" id="Parroquia" class="form-control" placeholder="Ingrese la Parroquia" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Correo Electrónico</label>
-                        <input type="email" name="Correo" id="Correo" class="form-control" placeholder="Ingrese su Correo" require>
+                        <label for="Nombres">Canton</label>
+                        <input type="text" name="Canton" id="Canton" class="form-control" placeholder="Ingrese el Canton" require>
                     </div>
                     <div class="form-group">
-                        <label for="Nombres">Contraseña</label>
-                        <input type="password" name="contrasenia" id="contrasenia" class="form-control" placeholder="**********" require>
-                    </div>
+                        <label for="Nombres">Provincia</label>
+                        <input type="text" name="Provincia" id="Provincia" class="form-control" placeholder="Ingrese la Provincia" require>
+                        </div>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Guardar</button>
@@ -79,9 +79,9 @@
 
 
 
-<?php require_once('../html/scripts2.php') ?>
+<?php require_once('../html/script3.php') ?>
 
-<script src="./usuarios.js"></script>
+<script src="./sucursales.js"></script>
 
 <!--
 

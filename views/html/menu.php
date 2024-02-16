@@ -70,8 +70,8 @@
                     </a>
                 </li>
                 <li class="menu-item">
-                    <a href="usuarios/sucursales.view.php" target="base" class="menu-link">
-                    <?php $_SESSION['rutas'] = 'Usuarios'; ?>
+                    <a href="usuarios/sucursales.views.php" target="base" class="menu-link">
+                    <?php $_SESSION['rut'] = 'Sucursales'; ?>
                         <div data-i18n="Without navbar">Sucursales</div>
                     </a>
                 </li>

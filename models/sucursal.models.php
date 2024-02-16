@@ -8,7 +8,7 @@ class Sucursales
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT * FROM `Sucursales`";
+        $cadena = "SELECT SucursalId, Nombre, Direccion, Telefono, Correo, Parroquia, Canton, Provincia FROM `Sucursales`";
         $datos = mysqli_query($con, $cadena);
         return $datos;
         $con->close();
@@ -62,9 +62,6 @@ class Sucursales
             return false;
         }
         $con->close();
-    }
-<<<<<<< HEAD
+
 }
-=======
 }
->>>>>>> eeb46a8eb29d0ab4a736e728e9723cd8cb4f4ae5

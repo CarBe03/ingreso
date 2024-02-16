@@ -119,8 +119,5 @@ var LimpiarCajas = () => {
     (document.getElementById("contrasenia").value = ""),
     $("#ModalUsuarios").modal("hide");
 };
-<<<<<<< HEAD
 init();
-=======
 init();
->>>>>>> eeb46a8eb29d0ab4a736e728e9723cd8cb4f4ae5
