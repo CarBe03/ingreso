@@ -1,5 +1,5 @@
 function init() {
-    $("#form_sucursales").on("submit", (e) => {
+    $("#form_sucursal").on("submit", (e) => {
       GuardarEditar(e);
     });
   }
@@ -40,8 +40,8 @@ function init() {
   
   var GuardarEditar = (e) => {
     e.preventDefault();
-    var DatosFormularioSucursal = new FormData($("#form_sucursales")[0]);
-    var accion = "../../controllers/sucursal2.o.controller.php?op=insertar";
+    var DatosFormularioSucursal = new FormData($("#form_sucursal")[0]);
+    var accion = "../../controllers/sucursal2.controller.php?op=insertar";
   
     for (var pair of DatosFormularioSucursal.entries()) {
       console.log(pair[0] + ", " + pair[1]);
