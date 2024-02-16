@@ -34,7 +34,11 @@ if ($_SESSION['Rol'] == 'ADMINISTRADOR') {
                     <div class="content-wrapper">
                         <!-- Content -->
                         <div class="container-xxl flex-grow-1 container-p-y">
+<<<<<<< HEAD
                             <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Lista /</span> <?php echo $_SESSION["rutas"] ?></h4>
+=======
+                            <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">RegAsis /</span> <?php echo $_SESSION["rutas"] ?></h4>
+>>>>>>> eeb46a8eb29d0ab4a736e728e9723cd8cb4f4ae5
                             <iframe name="base" id="base" src="graficos.php" style="border: none;" width="100%" height="1000px"></iframe>
                         </div>
                         <!-- / Content -->
