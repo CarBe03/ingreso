@@ -40,10 +40,10 @@ function init() {
   
   var GuardarEditar = (e) => {
     e.preventDefault();
-    var DatosFormularioUsuario = new FormData($("#form_sucursales")[0]);
-    var accion = "../../controllers/usuario.controllers.php?op=insertar";
+    var DatosFormularioSucursal = new FormData($("#form_sucursales")[0]);
+    var accion = "../../controllers/sucursal2.o.controller.php?op=insertar";
   
-    for (var pair of DatosFormularioUsuario.entries()) {
+    for (var pair of DatosFormularioSucursal.entries()) {
       console.log(pair[0] + ", " + pair[1]);
     }
   
@@ -55,7 +55,7 @@ function init() {
     $.ajax({
       url: accion,
       type: "post",
-      data: DatosFormularioUsuario,
+      data: DatosFormularioSucursal,
       processData: false,
       contentType: false,
       cache: false,
@@ -67,7 +67,7 @@ function init() {
           CargaLista();
           LimpiarCajas();
         } else {
-          alert("no tu pendejada");
+          alert("no  vale tu pendejada");
         }
       },
     });

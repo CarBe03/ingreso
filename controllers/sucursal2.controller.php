@@ -2,15 +2,15 @@
 error_reporting(0);
 /*TODO: Requerimientos */
 require_once('../config/sesiones.php');
-require_once("../models/usuario.models.php");
+require_once("../models/sucursal.models.php");
 //require_once("../models/Accesos.models.php");
-$Usuarios = new Usuarios;
+$Sucursales = new Sucursales;
 //$Accesos = new Accesos;
 switch ($_GET["op"]) {
         /*TODO: Procedimiento para listar todos los registros */
     case 'todos':
         $datos = array();
-        $datos = $Usuarios->todos();
+        $datos = $Sucursales->todos();
         while ($row = mysqli_fetch_assoc($datos)) {
             $todos[] = $row;
         }
@@ -26,14 +26,15 @@ switch ($_GET["op"]) {
         break;
         /*TODO: Procedimiento para insertar */
     case 'insertar':
-        $Nombres = $_POST["Nombres"];
-        $Apellidos = $_POST["Apellidos"];
+        $Nombre = $_POST["Nombre"];
+        $Direccion = $_POST["Direccion"];
+        $Telefono = $_POST["Telefono"];
         $Correo = $_POST["Correo"];
-        $Contrasenia = $_POST["contrasenia"];
-        $SucursalId = $_POST["SucursalId"];
-        $RolId = $_POST["RolId"];
+        $Parroquia = $_POST["Parroquia"];
+        $Canton = $_POST["Canton"];
+        $Provincia = $_POST["Provincia"];
         $datos = array();
-        $datos = $Usuarios->Insertar($Nombres, $Apellidos, $Correo, $Contrasenia, $SucursalId, $RolId);
+        $datos = $Sucursales->InsertarSucu($Nombre, $Direccion, $Telefono, $Correo, $Parroquia, $Canton, $Provincia);
         echo json_encode($datos);
         break;
         /*TODO: Procedimiento para actualizar */

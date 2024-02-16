@@ -2,7 +2,7 @@
 
 <!-- Basic Bootstrap Table -->
 <div class="card">
-    <button type="button" class="btn btn-outline-secondary" onclick="sucursales(); roles()" data-bs-toggle="modal" data-bs-target="#ModalSucursal">Nueva Sucursal</button>
+    <button type="button" class="btn btn-outline-secondary"  data-bs-toggle="modal" data-bs-target="#ModalSucursal">Nueva Sucursal</button>
 
 
     <h5 class="card-header">Lista de Sucursales</h5>

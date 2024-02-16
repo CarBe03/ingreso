@@ -18,19 +18,19 @@ class Sucursales
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "SELECT * FROM `Sucursales` WHERE `SucursalId`=$SucursalId";
+        $cadena = "SELECT * FROM `sucursales` WHERE `SucursalId`=$SucursalId";
         $datos = mysqli_query($con, $cadena);
         return $datos;
         $con->close();
     }
     /*TODO: Procedimiento para insertar */
-    public function Insertar($Nombre, $Direccion, $Telefono, $Correo, $Parroquia, $Canton, $Provincia)
+    public function InsertarSucu($Nombre, $Direccion, $Telefono, $Correo, $Parroquia, $Canton, $Provincia)
     {
         $con = new ClaseConectar();
         $con = $con->ProcedimientoConectar();
-        $cadena = "INSERT INTO `Sucursales`(`Nombre`, `Direccion`, `Telefono`, `Correo`, `Parroquia`, `Canton`, `Provincia`) VALUES('$Nombre','$Direccion','$Telefono','$Correo','$Parroquia','$Canton','$Provincia')";
+        $cadena2 = "INSERT INTO `sucursales`(`Nombre`, `Direccion`, `Telefono`, `Correo`, `Parroquia`, `Canton`, `Provincia`) VALUES('$Nombre','$Direccion','$Telefono','$Correo','$Parroquia','$Canton','$Provincia')";
 
-        if (mysqli_query($con, $cadena)) {
+        if (mysqli_query($con, $cadena2)) {
             return "ok";
         } else {
             return mysqli_error($con);
